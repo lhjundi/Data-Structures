@@ -40,7 +40,7 @@ int length(LIST *list){
 
 //Returns the key of a valid index from the list
 //Otherwise return ERROR (-1)
-int returnElementByIndex(LIST *list, int index){
+int getElementByIndex(LIST *list, int index){
     return ( index >0 && index <= list->numberOfElements)? list->A[index].key : ERROR;
 }
 
