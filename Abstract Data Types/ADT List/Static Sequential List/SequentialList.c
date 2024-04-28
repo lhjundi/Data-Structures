@@ -40,7 +40,73 @@ int length(LIST *list){
 
 //Returns the key of a valid index from the list
 //Otherwise return ERROR (-1)
-int getElementByIndex(LIST *list, int index){
+KEY_TYPE getElementByIndex(LIST *list, int index){
     return ( index >0 && index <= list->numberOfElements)? list->A[index].key : ERROR;
+}
+
+boolean isEmpty(LIST *list){
+    return (list->numberOfElements > 0)? TRUE : FALSE;
+}
+
+KEY_TYPE getFirstElement(LIST *list){
+    return (isEmpty(list))? ERROR : list->A[0].key;
+}
+
+KEY_TYPE getLastElement(LIST *list){
+    return (isEmpty(list))? ERROR : list->A[length(list)-1].key;
+}
+
+void destroyList(LIST *list){
+    list->numberOfElements = 0;
+}
+
+boolean isFull(LIST *list){
+    return (list->numberOfElements >= MAX)? FALSE : TRUE;
+}
+
+boolean insertElement(REGISTER reg, int i, LIST *list){
+    int j;
+    if( isFull(list) || (i < 1) || (i > ( list->numberOfElements + 1 ))){
+        return FALSE;
+    }
+    if( list->numberOfElements > 0 && i < list->numberOfElements+1 )
+        for( j = list->numberOfElements; j >= i ; j--)
+            list->A[j] = list->A[j-1];
+    list->A[i-1] = reg;
+    list->numberOfElements++;
+    return TRUE;
+}
+
+int linearSearch(KEY_TYPE key, LIST *list){
+    int i = 0;
+    while( i < list->numberOfElements){
+        if( key == list->A[i].key )
+            return i;
+        i++; 
+    }
+    return ERROR;
+}
+
+int SentinelSearch(KEY_TYPE key, LIST *list){
+    int i = 0;
+    list->A[list->numberOfElements].key = key;
+    while( list->A[i].key != key ) i++;
+    if( i > list->numberOfElements -1 ) return ERROR;
+    return i;
+}
+
+int BinarySearch(KEY_TYPE key, LIST *list){
+    int left, right, middle;
+    left = 0;
+    right = list->numberOfElements-1;
+    while( left <= right ){
+        middle = (left + right) / 2;
+        if (list->A[middle].key ==key) return middle;
+        else{
+            if( list->A[middle].key < key ) left = middle + 1;
+            else right = middle -1;
+        }
+    }
+    return ERROR;
 }
 
