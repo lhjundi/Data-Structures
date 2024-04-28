@@ -110,3 +110,24 @@ int BinarySearch(KEY_TYPE key, LIST *list){
     return ERROR;
 }
 
+boolean insertElementSortedList(REGISTER reg, LIST *list){
+    int i;
+    KEY_TYPE key = reg.key;
+    if ( isFull(list)) return FALSE;
+    list->A[list->numberOfElements].key = key;
+    while( list->A[i].key < key ) i++;
+    if(list->A[i].key == key && i < list->numberOfElements)
+        return FALSE;
+    else
+        return insertElement(reg, i+1, list);
+}
+
+boolean deleteElement(KEY_TYPE key, LIST *list){
+    int pos, j;
+    pos = LinearSearch(key, list);
+    if ( pos == ERROR ) return FALSE;
+    for( j = pos; j < list->numberOfElements-1 ; j++)
+        list->A[j] = list->A[j+1];
+    list->numberOfElements --;
+    return TRUE;
+}
