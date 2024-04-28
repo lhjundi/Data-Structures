@@ -28,7 +28,7 @@ void show(LIST *list){
 void help(){
     printf("Valid commands:\n");
     printf("\t i <key1>: insert element with key=<key1>\n");
-    printf("\t e <key1>: delete element with key=<key1>");
+    printf("\t e <key1>: delete element with key=<key1>\n");
     printf("\t p : print list\n");
     printf("\t d : destroy list\n");
     printf("\t h : show help message\n");

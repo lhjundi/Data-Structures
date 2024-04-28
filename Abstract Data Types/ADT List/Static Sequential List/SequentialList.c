@@ -124,7 +124,7 @@ boolean insertElementSortedList(REGISTER reg, LIST *list){
 
 boolean deleteElement(KEY_TYPE key, LIST *list){
     int pos, j;
-    pos = LinearSearch(key, list);
+    pos = linearSearch(key, list);
     if ( pos == ERROR ) return FALSE;
     for( j = pos; j < list->numberOfElements-1 ; j++)
         list->A[j] = list->A[j+1];
