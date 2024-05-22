@@ -1,4 +1,5 @@
 #include "staticStack.c"
+#include <stdlib.h>
 #include <stdio.h>
 
 void insert(STACK *pStack){
@@ -46,13 +47,13 @@ void help(){
 }
 
 void destroy(STACK *pStack){
-     destruirPilha(pStack);
+     destroyStack(pStack);
      printf("Stack deleted.\n");
 }
 
 int main(){
   STACK stack;
-  inicializarPilha(&stack);
+  initStack(&stack);
   help();
   char command = ' ';
   scanf("%c",&command);

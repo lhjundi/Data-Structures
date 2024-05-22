@@ -54,7 +54,7 @@ void destroyStack(STACK *pStack){
 // Inserts an element at the end of the stack
 bool insertElementStack(REGISTER reg, STACK* pStack){
     if (pStack -> top +1 >= MAX) return false;
-    pStack -> top = pStack + 1;
+    pStack -> top = pStack -> top + 1;
     pStack -> A[pStack -> top] = reg;
     return true;
 }
