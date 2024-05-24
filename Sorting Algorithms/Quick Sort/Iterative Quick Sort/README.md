@@ -1,1 +1,2 @@
-Iterative Quick Sort
+Quick Sort não recursivo
+
