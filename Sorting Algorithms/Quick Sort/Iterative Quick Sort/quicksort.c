@@ -38,7 +38,7 @@ void swap(int* a, int* b) {
     *b = t;
 }
 
-int less(int firstElement, int secondElement){
+boolean less(int firstElement, int secondElement){
     return firstElement < secondElement;
 }
 
