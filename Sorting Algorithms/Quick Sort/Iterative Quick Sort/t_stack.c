@@ -1,25 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-#define true 1
-#define false 0
-
-typedef int bool;
-typedef int KEY_TYPE;
-
-typedef struct tempRegister{
-    KEY_TYPE key;
-    struct tempRegister * next;
-    //other fields
-} REGISTER;
-
-typedef REGISTER* PTR;
-
-//the top pointer points to the top of the stack 
-//(it will be NULL if the stack is empty)
-typedef struct{
-    PTR top;
-} STACK;
+#include "t_stack.h"
 
 //Connected stack initialization 
 //(the stack is already created and is pointed to
@@ -42,7 +23,7 @@ int size(STACK *pStack){
 
 // Deletes the top element from the stack and copying
 // this element to the address pointed to by reg
-bool deleteElemStack(STACK *pStack, REGISTER* reg){
+boolean deleteElemStack(STACK *pStack, REGISTER* reg){
     if( pStack->top == NULL ) return false;
     *reg = *(pStack->top);
     PTR delete = pStack->top;
@@ -52,7 +33,7 @@ bool deleteElemStack(STACK *pStack, REGISTER* reg){
 }
 
 //deletes and releases memory of all elements of the stack
-bool destroyStack(STACK *pSTack){
+boolean destroyStack(STACK *pSTack){
     PTR delete;
     PTR position = pSTack->top;
     while (position != NULL){
@@ -65,7 +46,7 @@ bool destroyStack(STACK *pSTack){
 }
 
 // stack insertion, always at the top
-bool insertElemStack(REGISTER reg, STACK *pStack){
+boolean insertElemStack(REGISTER reg, STACK *pStack){
     PTR new = (PTR) malloc(sizeof(REGISTER));
     *new = reg;
     new->next = pStack->top;
