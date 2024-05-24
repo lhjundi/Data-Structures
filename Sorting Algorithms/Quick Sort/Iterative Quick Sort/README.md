@@ -2,6 +2,7 @@
 ## Trabalho Prático 03 - Quick Sort não recursivo
 
 Lucas Jundi Hikazudani
+
 João Pedro Piccino Marafiotti
 
 ## Pilhas e recursão 
