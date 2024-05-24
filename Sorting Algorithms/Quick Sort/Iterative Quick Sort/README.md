@@ -1,10 +1,10 @@
-IFSP - BES - SCLESDD - Estrutura de Dados
+##IFSP - BES - SCLESDD - Estrutura de Dados
 Trabalho Prático 03 - Quick Sort não recursivo
 
 Lucas Jundi Hikazudani
 João Pedro Piccino Marafiotti
 
-# Pilhas e recursão 
+## Pilhas e recursão 
 
 Quando ocorre uma chamada de uma função, a execução vai para a chamada da função, executa a função e quando terminar retorna de onde foi chamada.
 
@@ -41,7 +41,7 @@ Algoritmos recursivos:
     - mais fáceis de entender e de criar
     - mais elegantes
 
-Algoritmos iteraticos
+Algoritmos iterativos
     - normalmente mais rápidos do que os recursivos
     - não precisamos empilhar registros a cada iteração
 
@@ -53,4 +53,4 @@ Donald E. Knuth
 Devemos esquecer pequenas eficiências na maior parte do tempo, pois a otimização prematura é a raiz de todo mal, pensar em otimizar tudo desde o começo, não é uma boa escolha no geral, pois pode levar a erros, códigos mais complexos e a ganhos pequenos, "escovar bits" não vai fazer "um bom código", ele pode deixar um pouco mais rápido, mas talvez não suficientemente mais rápido.
 
 Isso não significa dizer que não é necessário realizar otimizações, é preciso atentar-se às oportunidade dos 3% críticos
-        se é possível fazer em O(n) ao invés de O(n)^2, será mais eficiente fazer em O(n), neste caso escovar bit já não é tão crítico e depende da aplicação.
+        se é possível fazer em O(n) ao invés de O(n)^2, será mais eficiente fazer em O(n), neste caso pode ser mais vantajoso dependendo da aplicação.
