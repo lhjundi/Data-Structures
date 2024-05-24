@@ -30,7 +30,7 @@ Desta forma ao invés de usar a recursão, é possível usar um laço de repeti�
 
 ## Recursão geral
 
-A recursão do Quick Sort Recursivo não apresenta o formato de uma recursão de cauda.
+A recursão do Quick Sort Recursivo não apresenta totalmente o formato de uma recursão de cauda.
 
 Recursões que não são de cauda também podem ser eliminadas
     - Porém é necessário utilizar uma pilha
