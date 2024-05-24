@@ -1,4 +1,8 @@
-Quick Sort não recursivo
+IFSP - BES - SCLESDD - Estrutura de Dados
+Trabalho Prático 03 - Quick Sort não recursivo
+
+Lucas Jundi Hikazudani
+João Pedro Piccino Marafiotti
 
 # Pilhas e recursão 
 
@@ -48,6 +52,5 @@ Donald E. Knuth
 
 Devemos esquecer pequenas eficiências na maior parte do tempo, pois a otimização prematura é a raiz de todo mal, pensar em otimizar tudo desde o começo, não é uma boa escolha no geral, pois pode levar a erros, códigos mais complexos e a ganhos pequenos, "escovar bits" não vai fazer "um bom código", ele pode deixar um pouco mais rápido, mas talvez não suficientemente mais rápido.
 
-Isso não significa dizer que não devemos fazer otimizações, a gente não deve deixar passar a oportunidade dos 3% críticos
-    - crítico
-        se posso fazer em O(n) ao invés de O(n)^2, vai ser bem mais rápido fazer em O(n), neste caso escovar bit já não é tão crítico, depende da aplicação
+Isso não significa dizer que não é necessário realizar otimizações, é preciso atentar-se às oportunidade dos 3% críticos
+        se é possível fazer em O(n) ao invés de O(n)^2, será mais eficiente fazer em O(n), neste caso escovar bit já não é tão crítico e depende da aplicação.
