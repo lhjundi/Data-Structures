@@ -117,3 +117,82 @@ PTR searchNode(PTR root, KEY_TYPE key, PTR *parent){
     }
     return NULL;
 }
+
+// searches by the bigger key minor than the key that
+// will be deleted
+
+PTR biggerLeft(PTR p, PTR *prev){
+    *prev = p;
+    p = p->left;
+    while (p->right){
+        *prev = p;
+        p = p->right;
+    }
+    return(p);
+}
+
+bool deleteNode(PTR *root, KEY_TYPE key){
+    PTR current, parent, substitute, parentSubstitute;
+    current = searchNode(*root, key, &parent);
+    if (current == NULL) return false;
+    if (!current->left || !current->right){ //has one o none child
+        if(current->left) substitute = current->left;
+        else substitute = current->right;
+        if(!parent){
+            *root = substitute;
+        }else {
+            if(parent->left == current) parent->left = substitute;
+            else parent->right = substitute;
+        }
+        free(current);
+    } else { //has to childs
+        substitute = biggerLeft(current, &parentSubstitute);
+        current->key = substitute->key;
+        if (parentSubstitute->left == substitute) parentSubstitute->left = substitute->left;
+        else parentSubstitute->right = substitute->left;
+        free(substitute);
+    }
+    return true;
+}
+
+//shows inorder
+void showTreeInorder(PTR root){
+    if (root == NULL) return;
+    showTreeInorder(root->left);
+    printf("%d ", root->key);
+    showTreeInorder(root->right);
+}
+
+// shows preorder
+void showTreePreorder(PTR root){
+    if (root == NULL) return;
+    printf("%d ", root->key);
+    showTreePreorder(root->left);
+    showTreePreorder(root->right);
+}
+
+//show postorder
+void showTreePostorder(PTR root){
+    if (root == NULL) return;
+    printf("%d ", root->key);
+    showTreePostorder(root->left);
+    showTreePostorder(root->right);
+}
+
+// aux function of destruction of a tree
+void destroyAux(PTR subRoot){
+    if(subRoot){
+        destroyAux(subRoot->left);
+        destroyAux(subRoot->right);
+        free(subRoot);
+    }
+}
+
+void destroyTree(PTR *root){
+    destroyAux(*root);
+    *root = NULL;
+}
+
+void init(PTR *root){
+    *root = NULL;
+}
